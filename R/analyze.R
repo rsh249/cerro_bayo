@@ -261,16 +261,17 @@ dev.off()
 # 
 # 
 # ## map figure
-# library(ggplot2)
+library(ggplot2)
 # 
-# wc_df = as.data.frame(cl[[1]], xy=TRUE)
-# ggplot() +
-#   geom_raster(data = wc_df, aes(x = x, y = y)) +
-#   geom_point(data=dat_grp, aes(x=lon, y=lat), col=as.integer(dat_grp$tax)) +
-#   coord_quickmap() +
-#   theme_bw() + 
-#   scale_fill_gradientn(colours=c('navy', 'white', 'darkred'),
-#                        na.value = "black")
+wc_df = as.data.frame(cl[[1]], xy=TRUE)
+ggplot() +
+  geom_raster(data = wc_df, aes(x = x, y = y)) +
+  geom_point(data=dat_grp, aes(x=lon, y=lat), col=as.integer(dat_grp$tax)) +
+  coord_quickmap() +
+  theme_bw() +
+  scale_fill_gradientn(colours=c('navy', 'white', 'darkred'),
+                       na.value = "black") +
+  theme(legend.position = 'bottom')
 # 
 # 
 # 
