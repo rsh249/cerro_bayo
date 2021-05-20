@@ -14,6 +14,7 @@ cb.melt = melt(cb, "fossil_taxon", c('genus1', 'genus2', 'genus3'), 'grp', na.rm
 cb.melt = cb.melt[order(cb.melt$fossil_taxon),]
 cb.melt = na.omit(cb.melt)
 
+
 #get clim
 if(file.exists('wc2.1_2.5m_bio.zip')) {
   
